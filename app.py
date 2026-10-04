@@ -342,7 +342,7 @@ with st.expander("📐 Mathematische Formulierung"):
         r"""
 **Modell** wie in der Frank-Wolfe-Demo: Fahrzeit $t_e(x)=a_e+b_e(x/c_e)^p$, Nutzergleichgewicht als Lösung von $\min\sum_e\int_0^{x_e}t_e$, Systemoptimum mit den Grenzkosten $t_e+x_et_e'$ statt der Fahrzeit. Wegevariablen: $x_e=\sum_p\delta_{ep}h_p$, $\sum_{p\in P_w}h_p=q_w$, $h_p\ge0$.
 
-**Gradient Projection** (Jayakrishnan, Tsai, Thomas, Lee 1994). Für das Zonenpaar $w$ mit Wegeliste $P_w$ und Basisweg $b=\arg\min_p c_p$ ($c_p=\sum_{e\in p}t_e(x_e)$):
+**Gradient Projection** (Jayakrishnan, Tsai, Prashker, Rajadhyaksha 1994). Für das Zonenpaar $w$ mit Wegeliste $P_w$ und Basisweg $b=\arg\min_p c_p$ ($c_p=\sum_{e\in p}t_e(x_e)$):
 $$\Delta h_p=\min\Big(h_p,\ \alpha\,\frac{c_p-c_b}{\sum_{e\in p\triangle b}t_e'(x_e)}\Big)\ \ (p\ne b),\qquad h_b\leftarrow h_b+\sum_{p\ne b}\Delta h_p,\quad h_p\leftarrow h_p-\Delta h_p.$$
 Das ist ein Newton-Schritt auf dem Unterraum $h_p\ge0$ mit der diagonalen Näherung der Hesse-Matrix (Kopplungen zwischen Zonenpaaren und die gemeinsamen Kanten $p\cap b$ werden weggelassen: sie heben sich beim Verschieben von $p$ auf $b$ heraus). Ist $h_p$ auf null geschoben, fällt $p$ aus $P_w$; neue Wege liefert ein Dijkstra je Ursprung mit den aktuellen Fahrzeiten.
 Die diagonale Näherung ignoriert, dass viele Zonenpaare gleichzeitig dieselben Kanten belasten: bei hoher Last überschätzt der volle Schritt ($\alpha=1$) die Wirkung und schießt über das Ziel hinaus, deshalb hängt der brauchbare Schritt von der Last ab.
@@ -359,6 +359,6 @@ st.markdown("---")
 
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
-    "Operations Research und Machine Learning. Interesse an einer maßgeschneiderten Lösung für "
-    "Ihr Unternehmen? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html)"
+    "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
+    "Mehr zur Reihe: [Netzwerkfluss: vom Max-Flow zum Netzdesign](https://sebastianhanisch.net/konzepte-netzwerkfluss.html)."
 )

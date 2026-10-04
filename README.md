@@ -1,7 +1,7 @@
 # Gradient Projection – Wege statt Kantenflüsse: verschwindet der Endspurt von Frank-Wolfe? – Streamlit-Demo
 
 Fünfte Erweiterung (Stück 17, **E4 Verkehrsumlegung, pfadbasiert**) der **Netzwerkfluss-Linie** der "Konzepte"-Reihe für die Website "Sebastian Hanisch – Operations Research und Machine Learning", Nachfolger von [frank-wolfe-demo](https://github.com/sebastian-hanisch/frank-wolfe-demo):
-anders als die Fall-Demos im Portfolio (ein Anwendungsfall, mehrere Verfahren im Vergleich) zeigt diese Demo **ein** Verfahren – **Gradient Projection** (Jayakrishnan, Tsai, Thomas, Lee 1994) für die Verkehrsumlegung – an einem wachsenden Beispiel.
+anders als die Fall-Demos im Portfolio (ein Anwendungsfall, mehrere Verfahren im Vergleich) zeigt diese Demo **ein** Verfahren – **Gradient Projection** (Jayakrishnan, Tsai, Prashker, Rajadhyaksha 1994) für die Verkehrsumlegung – an einem wachsenden Beispiel.
 Das Modell ist das der Frank-Wolfe-Demo (Wardrop-Nutzergleichgewicht mit BPR-Fahrzeiten auf einem Stadtgitter, dasselbe Netz und derselbe Seed); neu ist der **Löser**. Frank-Wolfe kennt nur Kantenflüsse: jede Iteration mischt einen neuen schnellsten Weg in den Verkehr und lässt alle alten Wege im selben Verhältnis schrumpfen, ein schlechter Weg wird nie ganz leer – daher der lange Endspurt.
 Gradient Projection hält je Zonenpaar eine **Liste von Wegen mit ihrem Fluss** und **schiebt Fluss vom teureren Weg auf den billigsten**, gestutzt bei null; die Schrittgröße kommt aus den Kostenableitungen (ein Newton-Schritt mit diagonaler Hesse-Matrix). Die Demo zeigt, was das bringt – und wo es **heikel** ist: die Schrittweite.
 
@@ -103,3 +103,7 @@ venv/Scripts/python -m pytest tests/ -v
 ```
 
 Gebaut mit Streamlit und Plotly; der Kern ist reines Python.
+
+---
+
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Netzwerkfluss: vom Max-Flow zum Netzdesign](https://sebastianhanisch.net/konzepte-netzwerkfluss.html).

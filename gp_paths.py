@@ -1,4 +1,4 @@
-"""Wegebasierte Verkehrsumlegung: Gradient Projection (Jayakrishnan, Tsai, Thomas, Lee 1994) für das Nutzergleichgewicht und das Systemoptimum.
+"""Wegebasierte Verkehrsumlegung: Gradient Projection (Jayakrishnan, Tsai, Prashker, Rajadhyaksha 1994) für das Nutzergleichgewicht und das Systemoptimum.
 
 **Idee:** Frank-Wolfe merkt sich nur den Verkehr auf den Kanten. Jede Iteration mischt einen neuen schnellsten Weg mit dem Gewicht a in den Verkehr und lässt alle alten Wege im selben Verhältnis schrumpfen - Fluss auf einem schlechten
 Weg wird geometrisch kleiner, aber nie null. Gradient Projection hält stattdessen je Zonenpaar eine **Liste von Wegen mit ihrem Fluss** und schiebt Fluss vom teureren Weg auf den billigsten der Liste (den "Basisweg"):
