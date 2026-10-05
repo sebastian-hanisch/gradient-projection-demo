@@ -333,7 +333,7 @@ st.markdown(
 | **Ein generiertes Netz** | Ein Gitter mit erzeugten Kapazitäten und Zonen, kein reales Stadtnetz und keine Fremddaten. |
 """
 )
-st.caption("Die Netzwerkfluss-Linie ist als Ganzes geplant: die dreizehn Stücke der Hauptlinie, die Erweiterung E1 (Projektauswahl, Graph Cuts, Gomory-Hu-Baum) und die Erweiterung E4: **Frank-Wolfe** (Stück 16) und **Gradient Projection** (dieses Stück, gebaut).")
+st.caption("Die Netzwerkfluss-Linie besteht aus den dreizehn Stücken der Hauptlinie, der Erweiterung E1 (Projektauswahl, Graph Cuts, Gomory-Hu-Baum), der Erweiterung E4: **Frank-Wolfe** (Stück 16, frank-wolfe-demo) und **Gradient Projection** (Stück 17, dieses Stück) sowie der Erweiterung E5 (Fluss über die Zeit, zeitfluss-demo); alle sind gebaut.")
 
 st.markdown("---")
 
